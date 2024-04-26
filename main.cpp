@@ -4,20 +4,6 @@
 #include "game_logic.h"
 using namespace std;
 
-
-
-double last_update_time = 0;
-bool event_triggered(double interval)
-{
-    double current_time = GetTime();
-    if(current_time - last_update_time >= interval)
-    {
-        last_update_time = current_time;
-        return true;
-    }
-    return false;
-}
-
 int main ()
 {
 
