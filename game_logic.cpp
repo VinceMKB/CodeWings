@@ -2,14 +2,18 @@
 
 void GameLogic::Draw()
 {
-    bird.Draw();
+    
+    background.Draw();
     pillar.Draw();
+    bird.Draw();
+    
 }
 
 void GameLogic::Update(float delta_time)
 {
     bird.Update(delta_time);
     pillar.Update(delta_time);
+    background.Update(delta_time);
     if(Check_Collision_With_Pillars(pillar.pillars_map, pillar.pillar_width, pillar.pillar_height))
     {
         cout << "TOUCHED PILLAR!!" << endl;

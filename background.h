@@ -10,13 +10,14 @@ class BackGround
     public:
         Texture2D background_texture;
         float background_speed;
-        Vector2 background_position;
+        Vector2 background_position_one;
+        Vector2 background_position_two;
 
         BackGround();
         ~BackGround();
 
         void Draw();
-        void Update();
+        void Update(float delta_time);
 
 };
 #endif

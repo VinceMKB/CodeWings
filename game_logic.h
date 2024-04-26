@@ -3,12 +3,15 @@
 
 #include "bird.h"
 #include "pillars.h"
+#include "background.h"
 
 class GameLogic
 {
     public:
         Bird bird = Bird();
         Pillars pillar = Pillars();
+        BackGround background = BackGround();
+        
         bool running = true;
         int score = 0;
 
