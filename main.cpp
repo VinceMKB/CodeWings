@@ -16,12 +16,6 @@ int main ()
 
     InitWindow(2 * Offset + CellSize * CellCount, 2 * Offset + CellSize * CellCount, "FlappyBird");
     SetTargetFPS(60);
-    /*
-    Image background_image = LoadImage("Resources/BackGround.png");
-    Texture2D background_texture = LoadTextureFromImage(background_image);
-    UnloadImage(background_image);
-    */
-  
 
     // Check if window initialization was successful
     if (!IsWindowReady())
@@ -38,7 +32,6 @@ int main ()
         
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        //DrawTexture(background_texture, 75, 75, WHITE);
         game.Update(delta_time);
         game.Draw();
         DrawFPS(10, 10);
