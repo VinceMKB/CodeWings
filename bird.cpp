@@ -14,7 +14,7 @@ Bird::Bird()
     nerd_down_texture = LoadTextureFromImage(image_2);
     UnloadImage(image_1);
     UnloadImage(image_2);
-    position ={400, 400};
+    position ={200, 200};//Position of Character
 }
 
 Bird::~Bird()

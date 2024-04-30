@@ -3,11 +3,15 @@
 BackGround::BackGround()
 {
     background_speed = 15.0f;
-    Image background_image = LoadImage("Resources/BackGround.png");
+    Image background_image = LoadImage("Resources/BetterBackGround.png");
     background_texture = LoadTextureFromImage(background_image);
     UnloadImage(background_image);
+    background_position_one =  {0, 0};
+    background_position_two = {(float)background_texture.width, 0}; 
+    /*
     background_position_one =  {75, 75};
     background_position_two = {(float)background_texture.width + 75, 75};
+    */
 
 }
 
