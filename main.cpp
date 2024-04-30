@@ -10,9 +10,7 @@ int main ()
     int CellSize = 32; // 800 by 800 with a border of 75
     int CellCount = 25;
    
-
-    cout << "Hello World" << endl;
-    InitWindow(CellSize * CellCount, CellSize * CellCount, "FlappyBird");
+    InitWindow(CellSize * CellCount, CellSize * CellCount, "CodeWings");
     SetTargetFPS(60);
 
     // Check if window initialization was successful
@@ -36,6 +34,8 @@ int main ()
         {
             game.Reset();
             game.paused_game = false;
+            game.draw_first_map = true;
+            game.draw_second_map = false;
         }
 
         game.Draw();

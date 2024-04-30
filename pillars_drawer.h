@@ -24,6 +24,8 @@ class PillarsDrawer
         PillarsDrawer();
         ~PillarsDrawer();
 
+        void Initialize_Maps(map<int, deque<pair<Vector2, Vector2>>>& pillars_map);
+
         //void Update_Initial(float delta_time);
         void Update_FirstMap(float delta_time);
         void Update_SecondMap(float delta_time);

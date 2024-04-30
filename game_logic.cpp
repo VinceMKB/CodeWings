@@ -48,13 +48,13 @@ void GameLogic::Update(float delta_time)
         pillar.Update_SecondMap(delta_time);
     }
     background.Update(delta_time);
-
-    if(Check_Collision_With_Pillars(pillar.initial_pillars_map, pillar.pillar_width, pillar.pillar_height))
+    
+    if(Check_Collision_With_Pillars(pillar.first_pillars_map, pillar.pillar_width, pillar.pillar_height)||Check_Collision_With_Pillars(pillar.second_pillars_map, pillar.pillar_width, pillar.pillar_height))
     {
         cout << "TOUCHED PILLAR!!" << endl;
         GameOver();
     }
-    
+
     //First Map Pillars
     if(Check_Last_Pillar_Passed(pillar.second_pillars_map))
     {
@@ -65,6 +65,7 @@ void GameLogic::Update(float delta_time)
     {
         pillar.first_pillars_map = pillar.RandomiseIndex(pillar.first_pillars_map);
         draw_first_map = false;
+        cout << draw_first_map << endl;
     }
     //End of First Map Pillars
 
@@ -78,6 +79,7 @@ void GameLogic::Update(float delta_time)
     {
         pillar.second_pillars_map = pillar.RandomiseIndex(pillar.second_pillars_map);
         draw_second_map = false;
+        cout << draw_second_map << endl;
     }
     //End Map Pillars
 }
@@ -118,8 +120,9 @@ bool GameLogic::Check_Last_Pillar_Passed(const map<int, deque<pair<Vector2, Vect
             auto lastPillar = pillars_map.at(lastIndex).back();
 
             // Check if the x position of the last pillar is less than 700
-            if (lastPillar.first.x < 700) 
+            if (lastPillar.first.x < 650) 
             {
+                //cout << "New pillar map is drawn" << endl;
                 return true; // The last pillar has passed the position
             }
         }
@@ -142,9 +145,10 @@ bool GameLogic::Check_Last_Pillar_Off_Screen(const map<int, deque<pair<Vector2, 
             // Get the last pillar in the last index
             auto lastPillar = pillars_map.at(lastIndex).back();
 
-            // Check if the x position of the last pillar is less than 700
-            if (lastPillar.first.x < 0) 
+            // Check if the x position of the last pillar is less than 5
+            if (lastPillar.first.x < 5) 
             {
+                cout << "Map is OFF screen" << endl;
                 return true; // The last pillar has passed the position
             }
         }
@@ -163,6 +167,8 @@ void GameLogic::Reset()
     bird.position = {200, 200};
     bird.velocity = {0, 0};
     score = 0;
+    draw_first_map = true;
+    draw_second_map = false;
 
     pillar.Reset();
 

@@ -25,9 +25,9 @@ class GameLogic
 
         bool Check_Collision_With_Pillars(const map<int, deque<pair<Vector2, Vector2>>>& pillars_map, const float& pillar_width, const float& pillar_height);
 
-        bool Check_Last_Pillar_Passed(const map<int, deque<pair<Vector2, Vector2>>>& pillars_map);
         bool Check_Last_Pillar_Off_Screen(const map<int, deque<pair<Vector2, Vector2>>>& pillars_map);
-
+        bool Check_Last_Pillar_Passed(const map<int, deque<pair<Vector2, Vector2>>>& pillars_map);
+        
         void GameOver();
         void Reset();
 
